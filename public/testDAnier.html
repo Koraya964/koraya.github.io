@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="niera">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BBH Ecosystem – Julien Raynaud</title>
+
+    <!-- Tailwind & DaisyUI -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Orbitron', sans-serif;
+            background-color: #e3debc;
+            color: #1a1a1a;
+            transition: background-color 0.6s ease, color 0.6s ease;
+        }
+
+        .hover-glow:hover {
+            box-shadow: 0 0 15px rgba(80, 76, 67, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .glitch {
+            position: relative;
+            color: #e3debc;
+            font-family: 'Orbitron', sans-serif;
+            animation: glitchAnim 1s infinite;
+        }
+
+        @keyframes glitchAnim {
+            0% {
+                text-shadow: 2px 0 #bfb894, -2px 0 #504c43;
+            }
+
+            20% {
+                text-shadow: -2px 0 #bfb894, 2px 0 #504c43;
+            }
+
+            40% {
+                text-shadow: 2px 2px #bfb894, -2px -2px #504c43;
+            }
+
+            60% {
+                text-shadow: -2px 2px #bfb894, 2px -2px #504c43;
+            }
+
+            80% {
+                text-shadow: 2px -2px #bfb894, -2px 2px #504c43;
+            }
+
+            100% {
+                text-shadow: 2px 0 #bfb894, -2px 0 #504c43;
+            }
+        }
+
+        .crt-overlay {
+            background: repeating-linear-gradient(rgba(255, 255, 255, 0.03),
+                    rgba(255, 255, 255, 0.03) 2px,
+                    transparent 2px,
+                    transparent 4px);
+            pointer-events: none;
+            position: fixed;
+            inset: 0;
+            z-index: 40;
+        }
+
+        #fadeOverlay {
+            position: fixed;
+            inset: 0;
+            background: #101010;
+            opacity: 1;
+            transition: opacity 0.8s ease;
+            z-index: 100;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col bg-[#e3debc] text-[#1a1a1a] transition-colors duration-500">
+
+    <!-- BOOT SCREEN -->
+    <div id="bootScreen" class="fixed inset-0 bg-[#101010] flex flex-col justify-center items-center z-50">
+        <h1 class="text-4xl font-bold text-[#e3debc] mb-4 glitch" data-text="SYSTEM[JR]">SYSTEM[JR]</h1>
+        <p id="bootText" class="text-lg text-[#bfb894]"></p>
+        <div class="mt-6 w-24 h-1 bg-[#e3debc] animate-pulse"></div>
+    </div>
+
+    <!-- CRT overlay -->
+    <div class="crt-overlay fixed inset-0 pointer-events-none z-40"></div>
+
+    <!-- HEADER -->
+    <header class="p-4 border-b border-[#8c886f] flex items-center justify-between bg-[#f3efdc]/80 backdrop-blur z-10">
+        <h1 class="text-lg font-bold">SYSTEM[JR] / BBH Ecosystem</h1>
+        <nav aria-label="Navigation principale" class="flex gap-2">
+            <a href="index.html" class="btn btn-xs btn-neutral hover:scale-105 transition-all">Accueil</a>
+            <a href="contact.html" class="btn btn-xs btn-outline hover:scale-105 transition-all">Contact</a>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main id="mainContent" class="opacity-0 transition-opacity duration-700 flex-1 p-6">
+        <div class="max-w-5xl mx-auto bg-[#f3efdc]/70 border border-[#8c886f] rounded-lg p-6">
+            <!-- Ton contenu ici -->
+            <section class="mb-8">
+                <h2 class="text-3xl font-bold border-b border-[#8c886f] pb-2 mb-2">BBH Ecosystem</h2>
+                <p class="text-sm text-[#504c43]">Gestionnaire de mots de passe et écosystème de sécurité utilisateur
+                </p>
+            </section>
+
+            <!-- Aperçu visuel -->
+            <section class="mb-8">
+                <div class="rounded-lg overflow-hidden border border-[#8c886f]">
+                    <img src="https://placehold.co/1200x600/e3debc/1a1a1a?text=BBH+Ecosystem"
+                        alt="Aperçu du projet Backend" class="w-full object-cover" />
+                </div>
+            </section>
+
+            <!-- Description -->
+            <section class="mb-8">
+                <h3 class="text-xl font-semibold mb-2 border-b border-[#8c886f] pb-1">Présentation</h3>
+                <p class="leading-relaxed text-[#3a362a]">
+                    BBH Ecosystem est mon projet fil rouge : un gestionnaire de mots de passe combiné à un écosystème de
+                    sécurité pour les utilisateurs.
+                    Actuellement, les fonctionnalités incluent : surveillance VPN, suivi de connexion et gestion
+                    centralisée des accès.
+                    L’objectif est de créer un environnement sécurisé, intuitif et évolutif pour protéger les données
+                    sensibles.
+                </p>
+            </section>
+
+            <!-- Stack & outils -->
+            <section class="mb-8">
+                <h3 class="text-xl font-semibold mb-2 border-b border-[#8c886f] pb-1">Stack Technique</h3>
+                <ul class="list-disc pl-6 space-y-1 text-[#3a362a]">
+                    <li>Node.js / REACT / MongoDB</li>
+                    <li>REST API sécurisée</li>
+                    <li>Gestion d’authentification et chiffrement</li>
+                    <li>Monitoring VPN / Connexions utilisateur</li>
+                    <li>TailwindCSS / DaisyUI pour l’interface</li>
+                </ul>
+            </section>
+
+            <!-- Liens -->
+            <section class="mb-8">
+                <h3 class="text-xl font-semibold mb-2 border-b border-[#8c886f] pb-1">Liens</h3>
+                <div class="flex flex-wrap gap-3">
+                    <a href="https://github.com/Koraya964" target="_blank"
+                        class="btn btn-sm btn-neutral rounded-lg p-3 bg-[#7b776c] hover:scale-105 transition-all text-white"
+                        aria-label="Voir le code sur GitHub">Code source</a>
+                    <a href="https://bbh-jr.netlify.app/" target="_blank"
+                        class="btn btn-sm btn-neutral rounded-lg p-3 bg-[#7b776c] hover:scale-105 transition-all text-white"
+                        aria-label="Voir la Démo">Démo Live</a>
+                </div>
+            </section>
+
+            <!-- Galerie -->
+            <section>
+                <h3 class="text-xl font-semibold mb-2 border-b border-[#8c886f] pb-1">Galerie</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                    <img src="https://placehold.co/400x250/e3debc/1a1a1a?text=Dashboard" alt="Dashboard"
+                        class="rounded border border-[#8c886f] hover-glow transition-all" />
+                    <img src="https://placehold.co/400x250/e3debc/1a1a1a?text=Monitoring+/ VPN" alt="Monitoring / VPN"
+                        class="rounded border border-[#8c886f] hover-glow transition-all" />
+                    <img src="https://placehold.co/400x250/e3debc/1a1a1a?text=Gestionnaire de connection"
+                        alt="Gesionnaire de mot de passe"
+                        class="rounded border border-[#8c886f] hover-glow transition-all" />
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="p-3 text-center text-xs border-t border-[#8c886f] bg-[#f3efdc]/80 backdrop-blur">
+        © 2025 Julien Raynaud — Tous droits réservés
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const bootScreen = document.getElementById("bootScreen");
+            const bootText = document.getElementById("bootText");
+            const mainContent = document.getElementById("mainContent");
+            const fullText = "Chargement de la page…";
+            let index = 0;
+
+            // Typing effect pour boot screen
+            function typeBootText() {
+                if (index <= fullText.length) {
+                    bootText.textContent = fullText.slice(0, index);
+                    index++;
+                    setTimeout(typeBootText, 40);
+                }
+            }
+            typeBootText();
+
+            // Masquer le boot screen après 2,5s et afficher le contenu
+            window.addEventListener("load", () => {
+                setTimeout(() => {
+                    if (bootScreen) bootScreen.classList.add("hidden");
+                    if (mainContent) mainContent.style.opacity = 1;
+                }, 2500);
+            });
+        });
+    </script>
+</body>
+
+</html>

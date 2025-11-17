@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="niera">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projet – System[JR]</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link href="../CSS/home.css" rel="stylesheet">
+</head>
+
+<body class="min-h-screen flex flex-col pa-body">
+
+    <!-- BOOT SCREEN -->
+    <div id="pa-boot-screen">
+        <h1 class="text-4xl font-bold pa-glitch mb-4">SYSTEM[JR]</h1>
+        <p id="pa-boot-text"></p>
+        <div class="mt-6 w-24 h-1 bg-[#3a362a] animate-pulse"></div>
+    </div>
+
+    <!-- CRT overlay & scanline -->
+    <div class="pa-crt-overlay"></div>
+    <div class="pa-crt-scan"></div>
+
+    <!-- HEADER -->
+    <header class="p-4 border-b border-[#8c886f] flex items-center justify-between bg-[#f3efdc]/80 backdrop-blur z-10">
+        <h1 class="text-lg font-bold">PROJET SYSTEM[JR] ver.1.009874.9623648b</h1>
+        <nav aria-label="Navigation principale" class="flex gap-2">
+            <a href="index.html" class="btn btn-xs btn-neutral hover:scale-105 transition-all">Accueil</a>
+            <a href="contact.html" class="btn btn-xs btn-outline hover:scale-105 transition-all">Contact</a>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-1 mt-6 overflow-y-auto scrollbar-thin scrollbar-thumb-[#8c886f] scrollbar-track-[#f3efdc] p-6 pa-main">
+        <div class="max-w-5xl mx-auto bg-[#f3efdc]/70 border border-[#8c886f] rounded-lg p-6">
+
+            <!-- Titre & infos -->
+            <section class="mb-8">
+                <h2 class="text-3xl font-bold border-b border-[#8c886f] pb-2 mb-2">Projet SYSTEM[JR]</h2>
+                <p class="text-sm text-[#504c43]">Interface claire et logique machine</p>
+            </section>
+
+            <!-- Aperçu visuel -->
+            <section class="mb-8">
+                <div class="rounded-lg overflow-hidden border border-[#8c886f]">
+                    <img src="https://placehold.co/1200x600/e3debc/1a1a1a?text=Aperçu+Projet+Clair"
+                        alt="Aperçu du projet" class="w-full object-cover" />
+                </div>
+            </section>
+
+            <!-- Description -->
+            <section class="mb-8">
+                <h3 class="text-xl font-semibold mb-2 border-b border-[#8c886f] pb-1">Présentation</h3>
+                <p class="leading-relaxed text-[#3a362a]">
+                    Ce projet explore un environnement clair et mécanique, où chaque élément visuel
+                    respire la précision et la symétrie. Le design reste inspiré par les interfaces
+                    industrielles, mais adapté à une esthétique lumineuse et ergonomique.
+                </p>
+            </section>
+
+            <!-- Stack & outils -->
+            <section class="mb-8">
+                <h3 class="text-xl font-semibold mb-2 border-b border-[#8c886f] pb-1">Stack Technique</h3>
+                <ul class="list-disc pl-6 space-y-1 text-[#3a362a]">
+                    <li>HTML5 / TailwindCSS / DaisyUI</li>
+                    <li>JavaScript ES6+</li>
+                    <li>Effets de transition NieraUI</li>
+                    <li>Responsive Design complet</li>
+                </ul>
+            </section>
+
+            <!-- Liens -->
+            <section class="mb-8">
+                <h3 class="text-xl font-semibold mb-2 border-b border-[#8c886f] pb-1">Liens</h3>
+                <div class="flex flex-wrap gap-3">
+                    <a href="https://github.com/Koraya964" target="_blank"
+                        class="btn btn-sm btn-neutral rounded-lg p-3 bg-[#7b776c] hover:scale-105 transition-all text-white"
+                        aria-label="Voir le code sur GitHub">Code source</a>
+                    <a href="https://github.com/Koraya964" target="_blank"
+                        class="btn btn-sm btn-neutral rounded-lg p-3 bg-[#7b776c] hover:scale-105 transition-all text-white"
+                        aria-label="Voir la Démo">Démo Live</a>
+                </div>
+            </section>
+
+            <!-- Galerie -->
+            <section>
+                <h3 class="text-xl font-semibold mb-2 border-b border-[#8c886f] pb-1">Galerie</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                    <img src="https://placehold.co/400x250/e3debc/1a1a1a?text=Preview+1" alt="Capture 1"
+                        class="rounded border border-[#8c886f] pa-hover-glow transition-all" />
+                    <img src="https://placehold.co/400x250/e3debc/1a1a1a?text=Preview+2" alt="Capture 2"
+                        class="rounded border border-[#8c886f] pa-hover-glow transition-all" />
+                    <img src="https://placehold.co/400x250/e3debc/1a1a1a?text=Preview+3" alt="Capture 3"
+                        class="rounded border border-[#8c886f] pa-hover-glow transition-all" />
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="p-3 text-center text-xs border-t border-[#8c886f] bg-[#f3efdc]/80 backdrop-blur">
+        © 2025 Julien Raynaud — Tous droits réservés
+    </footer>
+
+    <!-- =============================
+            SCRIPT JS
+    ============================== -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const paBootScreen = document.getElementById("pa-boot-screen");
+            const paBootText = document.getElementById("pa-boot-text");
+            const paMainContent = document.querySelector("main.pa-main");
+            const paFullText = "Chargement de la page [Projet SYSTEM[JR]]...\nInitialisation des modules graphiques...\nConnexion à NieraUI...";
+            let paIndex = 0;
+
+            function paTypeBootText() {
+                if (paIndex <= paFullText.length) {
+                    paBootText.textContent = paFullText.slice(0, paIndex);
+                    paIndex++;
+                    setTimeout(paTypeBootText, 40);
+                }
+            }
+            paTypeBootText();
+
+            window.addEventListener("load", () => {
+                setTimeout(() => {
+                    paBootScreen.style.display = "none";
+                    paMainContent.style.opacity = 1;
+                }, 2800);
+            });
+        });
+    </script>
+    <script>
+        async function fetchNodeWiki() {
+            try {
+                const res = await fetch('https://fr.wikipedia.org/api/rest_v1/page/summary/Node.js');
+                if (!res.ok) throw new Error('Impossible de récupérer les données');
+                const data = await res.json();
+
+                // Injecter les informations principales
+                document.getElementById('node-title').textContent = data.title;
+                document.getElementById('node-description').textContent = data.extract;
+                document.getElementById('node-link').href = data.content_urls.desktop.page;
+                document.getElementById('node-wiki').href = data.content_urls.desktop.page;
+                if (data.originalimage) {
+                    document.getElementById('node-image').src = data.originalimage.source;
+                }
+
+                // Stack technique (exemple statique mais tu peux l’adapter dynamiquement)
+                const stackList = ["JavaScript", "Node.js", "Express", "NPM", "MongoDB"];
+                const stackUl = document.getElementById('node-stack');
+                stackList.forEach(item => {
+                    const li = document.createElement('li');
+                    li.textContent = item;
+                    stackUl.appendChild(li);
+                });
+
+                // Galerie (exemple statique pour placeholders)
+                const galleryDiv = document.getElementById('node-gallery');
+                const galleryImages = [
+                    "https://placehold.co/400x250/e3debc/1a1a1a?text=Preview+1",
+                    "https://placehold.co/400x250/e3debc/1a1a1a?text=Preview+2",
+                    "https://placehold.co/400x250/e3debc/1a1a1a?text=Preview+3"
+                ];
+                galleryImages.forEach(src => {
+                    const img = document.createElement('img');
+                    img.src = src;
+                    img.alt = "Preview Node.js";
+                    img.className = "rounded border border-[#8c886f] pa-hover-glow transition-all";
+                    galleryDiv.appendChild(img);
+                });
+
+            } catch (err) {
+                console.error(err);
+                document.getElementById('node-description').textContent = "Impossible de charger les informations Wiki.";
+            }
+        }
+
+        // Lancer la récupération
+        fetchNodeWiki();
+    </script>
+</body>
+
+</html>
