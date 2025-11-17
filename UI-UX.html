@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="niera">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NieraUI – Julien Raynaud</title>
+
+    <!-- Tailwind & DaisyUI -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Orbitron', sans-serif;
+            background-color: #f3efdc;
+            color: #3a362a;
+            transition: all 0.6s;
+        }
+
+        .hover-glow:hover {
+            box-shadow: 0 0 10px rgba(58, 54, 42, .3);
+            transform: translateY(-2px);
+        }
+
+        .crt-overlay {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background: repeating-linear-gradient(rgba(0, 0, 0, 0.03),
+                    rgba(0, 0, 0, 0.03) 2px,
+                    transparent 2px,
+                    transparent 4px);
+            z-index: 40;
+        }
+
+        .glitch {
+            position: relative;
+            color: #3a362a;
+            animation: glitchAnim 1s infinite;
+        }
+
+        @keyframes glitchAnim {
+            0% {
+                text-shadow: 2px 0 #bfb894, -2px 0 #504c43;
+            }
+
+            20% {
+                text-shadow: -2px 0 #bfb894, 2px 0 #504c43;
+            }
+
+            40% {
+                text-shadow: 2px 2px #bfb894, -2px -2px #504c43;
+            }
+
+            60% {
+                text-shadow: -2px 2 #bfb894, 2px -2px #504c43;
+            }
+
+            80% {
+                text-shadow: 2px -2px #bfb894, -2px 2 #504c43;
+            }
+
+            100% {
+                text-shadow: 2px 0 #bfb894, -2px 0 #504c43;
+            }
+        }
+
+        #bootScreen {
+            position: fixed;
+            inset: 0;
+            background-color: #f3efdc;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 50;
+        }
+
+        #bootText {
+            color: #3a362a;
+            font-size: 1.125rem;
+            margin-bottom: 1rem;
+        }
+
+        main {
+            opacity: 0;
+            transition: opacity 0.7s ease;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col">
+
+    <!-- BOOT SCREEN -->
+    <div id="bootScreen">
+        <h1 class="text-4xl font-bold glitch mb-4">SYSTEM[JR]</h1>
+        <p id="bootText"></p>
+        <div class="mt-6 w-24 h-1 bg-[#3a362a] animate-pulse"></div>
+    </div>
+
+    <!-- CRT overlay -->
+    <div class="crt-overlay"></div>
+
+    <!-- HEADER -->
+    <header class="p-4 border-b border-[#8c886f] flex items-center justify-between bg-[#f3efdc]/80 backdrop-blur z-10">
+        <h1 class="text-lg font-bold">SYSTEM[JR] / NieraUI</h1>
+        <nav aria-label="Navigation principale" class="flex gap-2">
+            <a href="index.html" class="btn btn-xs btn-neutral hover:scale-105 transition-all">Accueil</a>
+            <a href="contact.html" class="btn btn-xs btn-outline hover:scale-105 transition-all">Contact</a>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main id="mainContent"
+        class="flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-[#8c886f] scrollbar-track-[#f3efdc] p-6">
+        <div class="max-w-5xl mx-auto bg-[#f3efdc]/70 border border-[#8c886f] rounded-lg p-6">
+
+            <!-- Titre & intro -->
+            <section class="mb-8">
+                <h2 class="text-3xl font-bold border-b border-[#8c886f] pb-2 mb-2">NieraUI</h2>
+                <p class="text-sm text-[#504c43]">
+                    NieraUI est le thème et le design système que j’ai créé pour mon portfolio SYSTEM[JR].
+                    Il mélange des couleurs claires/contrastées, une typographie inspirée du rétro-futurisme, et des
+                    composants modulaires pour une expérience cohérente.
+                </p>
+            </section>
+
+            <!-- Objectifs -->
+            <section class="mb-8">
+                <h3 class="text-xl font-semibold mb-2 border-b border-[#8c886f] pb-1">Objectifs du thème</h3>
+                <ul class="list-disc pl-6 space-y-1 text-[#3a362a]">
+                    <li>Créer une interface claire et lisible même avec un style rétro/futuriste.</li>
+                    <li>Permettre une personnalisation facile avec TailwindCSS et DaisyUI.</li>
+                    <li>Optimiser l’expérience utilisateur (UX) sur desktop et mobile.</li>
+                    <li>Ajouter des effets subtils (hover, glow, transitions) pour plus d’immersion.</li>
+                </ul>
+            </section>
+
+            <!-- Outils utilisés -->
+            <section class="mb-8">
+                <h3 class="text-xl font-semibold mb-2 border-b border-[#8c886f] pb-1">Outils & technologies</h3>
+                <ul class="list-disc pl-6 space-y-1 text-[#3a362a]">
+                    <li>HTML5 / TailwindCSS / DaisyUI</li>
+                    <li>JavaScript ES6+ pour les interactions et animations</li>
+                    <li>Google Fonts : Orbitron</li>
+                    <li>Responsive design avec Flexbox & Grid</li>
+                    <li>Effets visuels : hover-glow, fade-in, overlay CRT</li>
+                </ul>
+            </section>
+
+            <!-- Méthodes de travail -->
+            <section class="mb-8">
+                <h3 class="text-xl font-semibold mb-2 border-b border-[#8c886f] pb-1">Méthodes de travail</h3>
+                <p class="leading-relaxed text-[#3a362a]">
+                    J’ai conçu NieraUI en suivant une approche itérative : prototypage rapide, tests sur différents
+                    appareils, et ajustements constants des couleurs, espacements et animations.
+                    Chaque composant est pensé pour être réutilisable dans les pages portfolio, contact, et projet.
+                </p>
+            </section>
+
+            <!-- Sources et inspirations -->
+            <section class="mb-8">
+                <h3 class="text-xl font-semibold mb-2 border-b border-[#8c886f] pb-1">Sources & Inspirations</h3>
+                <ul class="list-disc pl-6 space-y-1 text-[#3a362a]">
+                    <li>Design système : TailwindUI et DaisyUI</li>
+                    <li>Typographie rétro-futuriste : Orbitron</li>
+                    <li>Couleurs inspirées de Nier Automata / univers minimal-tech</li>
+                    <li>Animations CSS & JS simples pour UX fluide</li>
+                </ul>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="p-3 text-center text-xs border-t border-[#8c886f] bg-[#f3efdc]/80 backdrop-blur">
+        © 2025 Julien Raynaud — Tous droits réservés
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const bootScreen = document.getElementById("bootScreen");
+            const bootText = document.getElementById("bootText");
+            const mainContent = document.getElementById("mainContent");
+            const fullText = "Chargement de la page Projet NieraUI …";
+            let index = 0;
+
+            // Typing effect pour boot screen
+            function typeBootText() {
+                if (index <= fullText.length) {
+                    bootText.textContent = fullText.slice(0, index);
+                    index++;
+                    setTimeout(typeBootText, 40);
+                }
+            }
+            typeBootText();
+
+            // Masquer le boot screen après 2,5s et afficher le contenu
+            window.addEventListener("load", () => {
+                setTimeout(() => {
+                    bootScreen.style.display = "none";
+                    mainContent.style.opacity = 1;
+                }, 2500);
+            });
+        });
+    </script>
+</body>
+
+</html>
